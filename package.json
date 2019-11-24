@@ -9,6 +9,7 @@
     "libsodium": "^0.7.5",
     "libsodium-wrappers": "^0.7.5",
     "node-fetch": "^2.6.0",
+    "nodemon": "^2.0.1",
     "socket.io": "^2.2.0"
   },
   "devDependencies": {
@@ -16,6 +17,8 @@
     "eslint-plugin-requirejs": "^4.0.0"
   },
   "scripts": {
+    "start": "node datavant_server.js",
+    "start:dev": "./node_modules/nodemon/bin/nodemon.js datavant_server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "browserify src/jigg.js --debug --s jigg -o dist/jigg.js"
   },
