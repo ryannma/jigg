@@ -8,13 +8,10 @@ const table16 = {
   8: '1000', 9: '1001', A: '1010', B: '1011',
   C: '1100', D: '1101', E: '1110', F: '1111'
 };
-function hex2bin(hex) {
-  var bin = '';
-  for (var i = 0; i < hex.length; i++) {
-    bin += table16[hex[i].toUpperCase()];
-  }
-  return bin;
-}
+
+// http://jsben.ch/bBEQB
+// Speed comparison of array split/join vs string concat
+const hex2bin = (hex) => hex.toUpperCase().split('').map(char => table16[char]).join('')
 
 /*
  *  Convert a binary base string to a hexadecimal base string
